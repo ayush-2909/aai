@@ -1,0 +1,28 @@
+Source code
+
+import aiml def main():
+kernel = aiml.Kernel() kernel.learn("flu.aiml") print("Welcome to the flu diag center") while True:
+user_input = input("You: ").strip().lower() if user_input == 'exit':
+print("Goodbye!") break
+response = kernel.respond(user_input) print("Expert System: " + response)
+if name == " main ": main()
+
+‘Flu.aiml
+<aiml>
+<category>
+<pattern>WELCOME</pattern>
+<template>Welcome to the flu diag center. Please enter your symptoms.</template>
+</category>
+<category>
+<pattern>FEVER</pattern>
+<template>No flu.</template>
+</category>
+<category>
+<pattern>COUGH</pattern>
+<template>No flu.</template>
+</category>
+<category>
+<pattern>FEVER COUGH</pattern>
+<template>You may have the flu.</template>
+</category>
+</aiml>
