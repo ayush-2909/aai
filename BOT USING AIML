@@ -1,0 +1,71 @@
+Source code
+
+import aiml
+kernel = aiml.Kernel() kernel.learn("bot1.aiml") while True:
+user_input = input("You: ")
+if user_input.lower() == "exit": print("Bot: Goodbye!") break
+bot_response = kernel.respond(user_input) print("Bot:", bot_response)
+bot_response = kernel.respond(user_input) print("Chatbot:", bot_response)
+
+Bot1.aiml
+
+<aiml version="1.0.1" encoding="UTF-8">
+<category>
+<pattern>HELLO</pattern>
+<template> Well, hello!
+</template>
+</category>
+<category>
+import aiml
+kernel = aiml.Kernel() kernel.learn("bot1.aiml") while True:
+user_input = input("You: ")
+if user_input.lower() == "exit": print("Bot: Goodbye!") break
+bot_response = kernel.respond(user_input) print("Bot:", bot_response)
+bot_response = kernel.respond(user_input) print("Chatbot:", bot_response)
+<pattern>WHAT ARE YOU</pattern>
+<template> I'm a bot!!
+</template>
+</category>
+<category>
+<pattern>SUNDAY</pattern>
+<template>
+the day of the week before monday and following saturday.
+</template>
+</category>
+<category>
+<pattern>MONDAY</pattern>
+<template>
+the day of the week before tuesday and following sunday.
+</template>
+</category>
+<category>
+<pattern>TUESDAY</pattern>
+<template>
+the day of the week before wednesday and following monday.
+</template>
+</category>
+<category>
+<pattern>WEDNESDAY</pattern>
+<template>
+the day of the week before thursday and following tuesday.
+</template>
+</category>
+<category>
+<pattern>THURSDAY</pattern>
+<template>
+the day of the week before friday and following wednesday.
+</template>
+</category>
+<category>
+<pattern>FRIDAY</pattern>
+<template>
+the day of the week before saturday and following thursday.
+</template>
+</category>
+<category>
+<pattern>SATURDAY</pattern>
+<template>
+the day of the week before sunday and following friday.
+</template>
+</category>
+</aiml>
